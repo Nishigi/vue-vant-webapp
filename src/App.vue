@@ -1,28 +1,38 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="app">
+    <keep-alive>
+      <router-view name="alive"></router-view>
+    </keep-alive>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang='scss'>
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+.app {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(246, 246, 246, 1);
+}
+
+// 修改vant-ui自带的一些样式
+.van-notice-bar__content {
+  width: 100%;
+}
+// 解决购物车中的checkbox左右居中的问题
+.van-checkbox__icon {
+  margin: 0 auto;
 }
 </style>
